@@ -47,7 +47,11 @@ public:
             parent[ulp_v] = ulp_u;
             size[ulp_u] += size[ulp_v];
         }
+    // to get size of the component node is in 
+    int getSize(int node) {
+        return size[findUPar(node)];
     }
+
 };
 int main() {
     DisjointSet ds(7);
