@@ -71,29 +71,30 @@ public:
         }
     }
 
-    void search(const string& text, vector<vector<int>>& res) {
-        Node* curr = root;
+    void search(string& s, vector<vector<int>>& res) {
+    Node* parent = root;
+    for (int i = 0; i < s.size(); i++) {
+        char c = s[i];
+        
+        if (parent->child.count(c)) {
+            parent = parent->child[c];
 
-        for (int i = 0; i < text.size(); i++) {
-            char c = text[i];
-
-            while (curr != root && !curr->child.count(c)) {
-                curr = curr->suffix_link;
+            if (parent->pattern_ind != -1)
+                res[parent->pattern_ind].push_back(i);
+            //mol is my_output_link
+            Node* mol = parent->output_link;
+            while (mol) {
+                res[mol->pattern_ind].push_back(i);
+                mol = mol->output_link;
             }
+        } else {
+            while (parent != root && !parent->child.count(c))
+                parent = parent->suffix_link;
 
-            if (curr->child.count(c)) {
-                curr = curr->child[c];
-            }
-
-            Node* temp = curr;
-            while (temp != nullptr) {
-                if (temp->pattern_ind != -1) {
-                    res[temp->pattern_ind].push_back(i);
-                }
-                temp = temp->output_link;
-            }
+            if (parent->child.count(c)) i--;  // Retry same i
         }
     }
+}
 };
 /////// below main is just and exmample and for reference 
 
