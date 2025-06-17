@@ -1,8 +1,8 @@
-# 🚀 Competitive Programming Algorithm Templates (2100+ Codeforces Level)
+# 🚀 Competitive Programming Templates for 1900–2400 Rated Problems
 
-Welcome to my personal Competitive Programming (CP) template library. This repository contains hand-written implementations of **advanced data structures and algorithms** commonly used to solve **2100+ rated problems** on platforms like **Codeforces**, **CSES**, and **AtCoder**.
+Welcome to my personal Competitive Programming (CP) template library. This repository contains hand-written implementations of **advanced data structures and algorithms** commonly used to solve **1900–2400 rated problems** on platforms like **Codeforces**, **CSES**, and **AtCoder**.
 
-Whether it's a contest, virtual round, or offline training—this collection is my go-to arsenal for writing efficient and clean solutions under pressure.
+Rather than rushing contests, I focused first on mastering the underlying theory—this repo reflects that journey.
 
 ---
 
